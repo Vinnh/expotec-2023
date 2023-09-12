@@ -1,0 +1,12 @@
+:root {
+    --green: #00bf63;
+    --green-dark: #067740;
+    --green-light: #8af7a2;
+    --red: #ff3131;
+    --red-dark: #d33a3a;
+    --red-light: #f9b6b6;
+    --white: #FFFFFF;
+    --white-200: rgb(239, 239, 239);
+    --gray: #6E7275;
+    --gray-200: #293145;
+}
