@@ -32,7 +32,6 @@
 
 header {
     padding: 20px 0px;
-    background-color: var(--green);
     backdrop-filter: blur(1px);
     pointer-events: all;
 }
@@ -49,7 +48,7 @@ nav {
 a {
     list-style: none;
     text-decoration: none;
-    color: var(--white);
+    color: #000000;
     font-size: 18px;
 }
 
@@ -87,6 +86,56 @@ a {
     display: none;
 }
 
+/**************** TELA INICIAL - FUNDO ****************/
+
+.bgAnimation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(20,1fr);
+    background: #ffffff;
+    filter: saturate(2);
+    overflow: hidden;
+}
+
+.colorBox{
+    z-index: 2;
+    filter: brightness(1.1);
+    transition: 2s ease;
+    position: relative;
+    margin: 2px;
+    background: #ffffff;
+}
+
+.colorBox:hover{
+    background: #b8eec4;
+    transition-duration: 0s;
+}
+
+.backgroundAmim{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #b8eec4;
+    filter: blur(45px);
+    animation: animBack 6s linear infinite;
+}
+
+@keyframes animBack {
+    0%{
+        top: -60px;
+    }
+    100%{
+        top: 120%;
+    }
+}
+
 /**************** TELA INICIAL - HOME *****************/
 
 #home .container-1 {
@@ -104,7 +153,7 @@ a {
 }
 
 #home .imghome img{
-    width: 150%;
+    width: 120%;
 }
 
 #home .data{
@@ -119,11 +168,14 @@ a {
 
 .tx-intro h1 {
     text-align: left;
-    max-width: 600px;
-    font-size: 45px;
-    line-height: 60px;
+    max-width: 700px;
+    font-size: 30px;
     color: var(--gray-200);
     margin-bottom: 60px;
+}
+
+.tx-intro span {
+    color: var(--red);
 }
 
 .tx-intro a {
@@ -237,50 +289,97 @@ a {
     color: var(--green-dark);
 }
 
-.bgAnimation{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
+/**************** TELA PROGRAMAÇÃO *****************/
+
+#program .container {
+    flex-direction: column;
+
+}
+
+.row {
     display: grid;
-    grid-template-columns: repeat(20,1fr);
-    grid-template-rows: repeat(20,1fr);
-    background: #ffffff;
-    filter: saturate(2);
-    overflow: hidden;
+    grid-template-columns: 1fr 2px 1fr;
+    grid-column-gap: 40px;
 }
 
-.colorBox{
-    z-index: 2;
-    filter: brightness(1.1);
-    transition: 2s ease;
+.row .date {
+    grid-area: theDate;
+}
+
+.row .line {
     position: relative;
-    margin: 2px;
-    background: #ffffff;
+    background-color: var(--red-dark);
+    grid-area: theLine;
 }
 
-.colorBox:hover{
-    background: #b8eec4;
-    transition-duration: 0s;
-}
-
-.backgroundAmim{
+.line span {
     position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border: 2px solid var(--red);
+    border-radius: 50%;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: #b8eec4;
-    filter: blur(60px);
-    animation: animBack 6s linear infinite;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s;
 }
 
-@keyframes animBack {
-    0%{
-        top: -60px;
-    }
-    100%{
-        top: 120%;
-    }
+.row .content {
+    padding: 20px;
+    background-color: var(--red);
+    border-radius: 10px;
+    grid-area: theContent;
 }
+
+.content h2 {
+    padding-bottom: 8px;
+    color: var(--white);
+}
+
+.content p {
+    line-height: 1.5;
+    color: var(--white);
+}
+
+.row:nth-child(odd) {
+    grid-template-areas: 'theDate theLine theContent';
+}
+
+.row:nth-child(even) {
+    grid-template-areas: 'theContent theLine theDate';
+}
+
+.row .content, .row .date {
+    margin-bottom: 35px;
+
+}
+
+.row:nth-child(odd) .date{
+    text-align: right;
+}
+
+.date span {
+    display: inline-block;
+    padding: 10px 16px;
+    font-weight: 600;
+    border: 2px solid var(--red);
+    border-radius: 25px;
+    position: relative;
+    top: -7px;
+}
+
+.line .last-point {
+    top: inherit;
+    bottom: 0;
+}
+
+.row .last {
+    margin-bottom: 0;
+}
+
+.row:hover .line span:not(.last-point){
+    background-color: var(--red);
+    box-shadow: 0 0 9px 3px var(--red-dark);
+}
+
