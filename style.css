@@ -52,6 +52,11 @@ a {
     font-size: 18px;
 }
 
+nav a img {
+    width: 50px;
+    height: 50px;
+}
+
 
 .btn a {
     padding: 10px 20px;
@@ -86,8 +91,8 @@ a {
     display: none;
 }
 
-/**************** TELA INICIAL - FUNDO ****************/
 
+/**************** TELA INICIAL - FUNDO *****************/
 .bgAnimation{
     position: absolute;
     top: 0;
@@ -123,7 +128,7 @@ a {
     width: 100%;
     height: 40px;
     background: #b8eec4;
-    filter: blur(45px);
+    filter: blur(60px);
     animation: animBack 6s linear infinite;
 }
 
@@ -149,11 +154,11 @@ a {
 
 
 #home figure img{
-    width: 30%;
+    width: 50%;
 }
 
 #home .imghome img{
-    width: 120%;
+    width: 150%;
 }
 
 #home .data{
@@ -168,8 +173,9 @@ a {
 
 .tx-intro h1 {
     text-align: left;
-    max-width: 700px;
-    font-size: 30px;
+    max-width: 600px;
+    font-size: 40px;
+    line-height: 55px;
     color: var(--gray-200);
     margin-bottom: 60px;
 }
@@ -209,7 +215,7 @@ a {
 }
 
 .events .title {
-    margin-top: 80px;
+    margin-top: 100px;
     margin-bottom: 80px;
 }
 
@@ -240,8 +246,13 @@ a {
     position: relative;
     z-index: 1;
     text-align: center;
+    /* transition: .1s; */
     
 }
+
+/* .single-events:hover {
+    border: 4px solid var(--green);
+} */
 
 .single-events p {
     font-size: 12px;
@@ -289,10 +300,71 @@ a {
     color: var(--green-dark);
 }
 
+/**************** TELA DE SUBMISSÃO *****************/
+
+#submeta .container {
+    justify-content: center;
+}
+
+#submeta .container-mensagem {
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 80px;
+    margin-top: 80px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--green-light);
+}
+
+#submeta .container-mensagem h1 {
+    color: #000000;
+    font-size: 40px;
+}
+
+
+#submeta .btn {
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: var(--red);
+    color: #fff;
+}
+
+#submeta a {
+    padding: 12px 26px;
+    border-radius: 10px;
+    color: var(--white);
+    background-color: var(--green);
+    pointer-events: all;
+}
+
+#submeta a:hover {
+    background-color: #1ec95f;
+}
+
+
 /**************** TELA PROGRAMAÇÃO *****************/
 
 #program .container {
     flex-direction: column;
+
+}
+
+#program .container .title{
+    margin-top: 80px;
+    margin-bottom: 80px;
 
 }
 
@@ -382,4 +454,3 @@ a {
     background-color: var(--red);
     box-shadow: 0 0 9px 3px var(--red-dark);
 }
-
