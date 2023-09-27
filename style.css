@@ -207,7 +207,7 @@ nav a img {
 /**************** SEÇÃO O QUE TERÁ NO EVENTO *****************/
 
 #eventos {
-    background-color: var(--green-light);
+
 }
 
 .events .container {
@@ -216,7 +216,6 @@ nav a img {
 
 .events .title {
     margin-top: 100px;
-    margin-bottom: 80px;
 }
 
 .container-events {
@@ -228,37 +227,114 @@ nav a img {
     margin-bottom: 80px;
 }
 
-.container-events ion-icon {
-    font-size: 80px;
-    color: var(--green);
-
+.container-events .card {
+    width: 350px;
+    height: 515px;
+    margin: 100px auto 0;
+    background: #fff;
+    perspective: 1000px;
 }
 
-.single-events {
-    width: 250px;
-    height: 250px;
-    background: var(--white);
+.container-events .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.container-events .front, .container-events .back {
+    width: 100%;
+    height: 100%;
     border-radius: 15px;
-    padding: 20px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.container-events .front {
+    background: linear-gradient(#d33a3aad, #067740a4), url(imagens/event-01.jpg);
+    background-size: cover;    
+    background-position: center;
+    padding: 60px 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    /* transition: .1s; */
-    
+    justify-content: flex-end;
+    color: #fff;
 }
 
-/* .single-events:hover {
-    border: 4px solid var(--green);
-} */
-
-.single-events p {
-    font-size: 12px;
-    max-width: 200px;
-    text-align: center;
+.container-events #f1 {
+    background: linear-gradient(#d33a3aad, #067740a4), url(imagens/event-02.jpg);
+    background-size: cover;    
+    background-position: center;
 }
+
+.container-events #f2 {
+    background: linear-gradient(#d33a3aad, #067740a4), url(imagens/event-03.jpg);
+    background-size: cover;    
+    background-position: left;
+}
+
+.container-events #f3 {
+    background: linear-gradient(#d33a3aad, #067740a4), url(imagens/event-04.jpg);
+    background-size: cover;    
+    background-position: center;
+}
+
+.container-events #f4 {
+    background: linear-gradient(#d33a3aad, #067740a4), url(imagens/event-05.jpg);
+    background-size: cover;    
+    background-position: center;
+}
+
+.container-events #f5 {
+    background: linear-gradient(#d33a3aad, #067740a4), url(imagens/event-06.jpg);
+    background-size: cover;    
+    background-position: center;
+}
+
+.container-events #f6 {
+    background: linear-gradient(#d33a3aad, #067740a4), url(imagens/event-07.jpg);
+    background-size: cover;    
+    background-position: center;
+}
+
+.container-events .front h2{
+    font-weight: 500;
+}
+.container-events .front button{
+    width: 120px;
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 50px;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    color: #fff;
+}
+
+
+.container-events .back {
+    background: #f8f8f8;
+    color: #333;
+    padding: 20px 40px;
+    transform: rotateY(180deg);
+}
+
+.container-events .back h1 {
+    color: var(--green);
+    font-size: 30px;
+    line-height: 55px;
+    margin-bottom: 10px;
+}
+
+.container-events .back p {
+    font-size: 15px;
+}
+
+.container-events .card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
 
 /**************** TELA SOBRE O EVENTO *****************/
 
