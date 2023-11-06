@@ -249,6 +249,7 @@ nav a img {
     border-radius: 15px;
     position: absolute;
     backface-visibility: hidden;
+    align-items: center;
 }
 
 .container-events .front {
@@ -652,10 +653,7 @@ nav a img {
     .menu {
         display: none;
     }
-    
-    .btn {
-        display: none;
-    }
+
     
     .menu.menu.is-active {
         display: flex;
