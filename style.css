@@ -563,6 +563,28 @@ nav a img {
 
 @media (max-width: 1000px) {
 
+    #ofi-min .container {
+        flex-direction: column;
+    }  
+
+    .figura figure img {
+        width: 400px;
+        height: 400px;
+    }
+
+    #noite-cultural .container {
+        flex-direction: column;
+    }  
+
+    #humanidades .container {
+        flex-direction: column-reverse;
+    }  
+
+    .figura-1 figure img {
+        width: 200px;
+        height: 200px;
+    }
+
     header {
         backdrop-filter: none;
     }
